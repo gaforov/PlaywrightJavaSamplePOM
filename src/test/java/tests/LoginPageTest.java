@@ -4,10 +4,8 @@ import base.BaseTest;
 import constants.AppConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 
 public class LoginPageTest extends BaseTest {
-
     @Test(priority = 1)
     public void loginPageNavigationTest() {
         loginPage = homePage.navigateToLoginPage();
@@ -18,11 +16,13 @@ public class LoginPageTest extends BaseTest {
 
     @Test(priority = 2)
     public void forgotPasswordLinkExistTest() {
+        loginPage = homePage.navigateToLoginPage();
         Assert.assertTrue(loginPage.isForgotPasswordLinkExist());
     }
 
     @Test(priority = 3)
     public void appLoginTest() {
+        loginPage = homePage.navigateToLoginPage();
         Assert.assertTrue(loginPage.doLogin(properties.getProperty("username"), properties.getProperty("password")));
     }
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="/Users/saidgaforov/IdeaProjects/PlaywrightJavaPractice/src/test/java/tests/HomePageTest.java">
+    <test verbose="2" preserve-order="true" name="Regression Suite">
         <classes>
             <class name="tests.HomePageTest">
                 <methods>
@@ -11,6 +10,7 @@
                     <include name="searchTest"/>
                 </methods>
             </class>
+            <class name="tests.LoginPageTest"/> <!--You can test entire class like this OR be more specific by including methods like above-->
         </classes>
     </test>
 </suite>

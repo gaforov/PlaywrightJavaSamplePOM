@@ -1,8 +1,9 @@
 package pages;
 
 import com.microsoft.playwright.Page;
+import factory.PlaywrightFactory;
 
-public class LoginPage {
+public class LoginPage extends PlaywrightFactory {
     private Page page;
 
     private String userEmailField = "input#input-email";

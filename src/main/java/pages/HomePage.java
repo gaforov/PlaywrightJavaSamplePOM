@@ -1,9 +1,10 @@
 package pages;
 
 import com.microsoft.playwright.Page;
+import factory.PlaywrightFactory;
 
-public class HomePage {
-    private Page page;
+public class HomePage extends PlaywrightFactory {
+    //private Page page;
     // 1. String Locators (Object Repository)
     private String search = "input[name='search']";
     private String searchIcon = "button[class='btn btn-default btn-lg']";

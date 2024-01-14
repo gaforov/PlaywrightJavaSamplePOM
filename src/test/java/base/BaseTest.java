@@ -1,32 +1,20 @@
 package base;
 
-import com.microsoft.playwright.Page;
-import factory.PlaywrightFactory;
-import pages.HomePage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import pages.LoginPage;
 
-import java.util.Properties;
+public class BaseTest extends PageInitializer {
 
-public class BaseTest {
-    PlaywrightFactory pf;
-    Page page;
-    protected Properties properties;
-    protected HomePage homePage;
-    protected LoginPage loginPage;
-
-    @BeforeTest()
+    @BeforeTest
     protected void setUp() {
-        pf = new PlaywrightFactory();
+        initialize();
         properties = pf.initProperties();
         page = pf.initBrowser(properties);
-        homePage = new HomePage(page);
     }
 
     @AfterTest
     protected void tearDown() {
-        //page.context().browser().close();
-        page.pause();
+        page.context().browser().close();
+        //page.pause();
     }
 }

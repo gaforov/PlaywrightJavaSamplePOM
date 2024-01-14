@@ -10,8 +10,8 @@ public class PlaywrightFactory {
     Playwright playwright;
     Browser browser;
     BrowserContext browserContext;
-    public Page page;
-    Properties properties;
+    public static Page page;
+    public static Properties properties;
     public Page initBrowser(Properties properties) {
         String browserName = properties.getProperty("browser").trim();
         System.out.println("browser name: " + browserName);
